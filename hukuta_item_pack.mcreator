@@ -1,0 +1,124 @@
+{
+  "mod_elements": [
+    {
+      "name": "CustomCraftTable",
+      "type": "block",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "custom_craft_table",
+      "path": "~/Lohotron"
+    },
+    {
+      "name": "Custom",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "custom_lohotron",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Lohotron"
+    },
+    {
+      "name": "CustomCraftTableGUI",
+      "type": "gui",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "custom_craft_table_gui",
+      "path": "~/Lohotron"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [
+    {
+      "name": "dobichacrafttable",
+      "files": [
+        "dobicha"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "hodbacrafttable",
+      "files": [
+        "hodba"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "padeniecrafttable",
+      "files": [
+        "padenie"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "postavilcrafttable",
+      "files": [
+        "postavil"
+      ],
+      "category": "block",
+      "subtitle": ""
+    },
+    {
+      "name": "slomalcrafttable",
+      "files": [
+        "slomal"
+      ],
+      "category": "block",
+      "subtitle": ""
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "subtitles.padeniecrafttable": "",
+      "subtitles.slomalcrafttable": "",
+      "block.hukuta_item_pack.custom_craft_table": "Custom Craft Table",
+      "subtitles.dobichacrafttable": "",
+      "subtitles.postavilcrafttable": "",
+      "subtitles.zvuki_crafttable": "",
+      "subtitles.hodbacrafttable": ""
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Lohotron",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "hukuta_item_pack",
+    "modName": "Hu4uTa Item Pack",
+    "version": "1.0.0",
+    "author": "hu4uta, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.18.2",
+    "modElementsPackage": "net.hukuta.itempack",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200119518
+}

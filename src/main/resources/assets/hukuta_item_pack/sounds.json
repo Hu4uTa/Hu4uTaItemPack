@@ -1,0 +1,47 @@
+{
+  "dobichacrafttable": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hukuta_item_pack:dobicha",
+        "stream": false
+      }
+    ]
+  },
+  "hodbacrafttable": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hukuta_item_pack:hodba",
+        "stream": false
+      }
+    ]
+  },
+  "padeniecrafttable": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hukuta_item_pack:padenie",
+        "stream": false
+      }
+    ]
+  },
+  "postavilcrafttable": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hukuta_item_pack:postavil",
+        "stream": false
+      }
+    ]
+  },
+  "slomalcrafttable": {
+    "category": "block",
+    "sounds": [
+      {
+        "name": "hukuta_item_pack:slomal",
+        "stream": false
+      }
+    ]
+  }
+}

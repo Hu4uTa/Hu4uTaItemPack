@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "hukuta_item_pack:blocks/greeeeen",
+    "up": "hukuta_item_pack:blocks/greeeeen",
+    "north": "hukuta_item_pack:blocks/da",
+    "east": "hukuta_item_pack:blocks/da",
+    "south": "hukuta_item_pack:blocks/da",
+    "west": "hukuta_item_pack:blocks/da",
+    "particle": "hukuta_item_pack:blocks/greeeeen"
+  }
+}
