@@ -22,7 +22,7 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.hukuta.itempack.world.inventory.CustomCraftTableGUIMenu;
+import net.hukuta.itempack.world.inventory.LohotronGUIMenu;
 import net.hukuta.itempack.init.HukutaItemPackModBlockEntities;
 
 import javax.annotation.Nullable;
@@ -31,12 +31,12 @@ import java.util.stream.IntStream;
 
 import io.netty.buffer.Unpooled;
 
-public class CustomCraftTableBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+public class LohotronBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
 	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
-	public CustomCraftTableBlockEntity(BlockPos position, BlockState state) {
-		super(HukutaItemPackModBlockEntities.CUSTOM_CRAFT_TABLE.get(), position, state);
+	public LohotronBlockEntity(BlockPos position, BlockState state) {
+		super(HukutaItemPackModBlockEntities.LOHOTRON.get(), position, state);
 	}
 
 	@Override
@@ -80,7 +80,7 @@ public class CustomCraftTableBlockEntity extends RandomizableContainerBlockEntit
 
 	@Override
 	public Component getDefaultName() {
-		return new TextComponent("custom_craft_table");
+		return new TextComponent("lohotron");
 	}
 
 	@Override
@@ -90,7 +90,7 @@ public class CustomCraftTableBlockEntity extends RandomizableContainerBlockEntit
 
 	@Override
 	public AbstractContainerMenu createMenu(int id, Inventory inventory) {
-		return new CustomCraftTableGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
+		return new LohotronGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(this.worldPosition));
 	}
 
 	@Override

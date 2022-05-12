@@ -11,14 +11,14 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 
-import net.hukuta.itempack.client.gui.CustomCraftTableGUIScreen;
+import net.hukuta.itempack.client.gui.LohotronGUIScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class HukutaItemPackModScreens {
 	@SubscribeEvent
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			MenuScreens.register(HukutaItemPackModMenus.CUSTOM_CRAFT_TABLE_GUI, CustomCraftTableGUIScreen::new);
+			MenuScreens.register(HukutaItemPackModMenus.LOHOTRON_GUI, LohotronGUIScreen::new);
 		});
 	}
 }

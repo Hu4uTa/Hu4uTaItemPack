@@ -12,7 +12,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 
-import net.hukuta.itempack.world.inventory.CustomCraftTableGUIMenu;
+import net.hukuta.itempack.world.inventory.LohotronGUIMenu;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -20,8 +20,8 @@ import java.util.ArrayList;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class HukutaItemPackModMenus {
 	private static final List<MenuType<?>> REGISTRY = new ArrayList<>();
-	public static final MenuType<CustomCraftTableGUIMenu> CUSTOM_CRAFT_TABLE_GUI = register("custom_craft_table_gui",
-			(id, inv, extraData) -> new CustomCraftTableGUIMenu(id, inv, extraData));
+	public static final MenuType<LohotronGUIMenu> LOHOTRON_GUI = register("lohotron_gui",
+			(id, inv, extraData) -> new LohotronGUIMenu(id, inv, extraData));
 
 	private static <T extends AbstractContainerMenu> MenuType<T> register(String registryname, IContainerFactory<T> containerFactory) {
 		MenuType<T> menuType = new MenuType<T>(containerFactory);

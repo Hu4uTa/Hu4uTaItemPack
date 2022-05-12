@@ -1,21 +1,30 @@
 {
   "mod_elements": [
     {
-      "name": "CustomCraftTable",
+      "name": "Lohotron",
       "type": "block",
-      "sortid": 1,
+      "sortid": 6,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "custom_craft_table",
+      "registry_name": "lohotron",
       "path": "~/Lohotron"
     },
     {
-      "name": "Custom",
-      "type": "procedure",
-      "sortid": 3,
+      "name": "LohotronGUI",
+      "type": "gui",
+      "sortid": 7,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "custom_lohotron",
+      "registry_name": "lohotron_gui",
+      "path": "~/Lohotron"
+    },
+    {
+      "name": "LohotronProcide",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lohotron_procide",
       "metadata": {
         "dependencies": [
           {
@@ -31,13 +40,12 @@
       "path": "~/Lohotron"
     },
     {
-      "name": "CustomCraftTableGUI",
-      "type": "gui",
-      "sortid": 4,
+      "name": "Hu4uTaItemPackLogo",
+      "type": "painting",
+      "sortid": 9,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "custom_craft_table_gui",
-      "path": "~/Lohotron"
+      "registry_name": "hu_4u_ta_item_pack_logo"
     }
   ],
   "variable_elements": [],
@@ -84,12 +92,21 @@
     }
   ],
   "language_map": {
+    "ru_ru": {
+      "subtitles.padeniecrafttable": "",
+      "subtitles.slomalcrafttable": "",
+      "subtitles.dobichacrafttable": "",
+      "subtitles.postavilcrafttable": "",
+      "block.hukuta_item_pack.lohotron": "Custom Craft Table",
+      "subtitles.zvuki_crafttable": "",
+      "subtitles.hodbacrafttable": ""
+    },
     "en_us": {
       "subtitles.padeniecrafttable": "",
       "subtitles.slomalcrafttable": "",
-      "block.hukuta_item_pack.custom_craft_table": "Custom Craft Table",
       "subtitles.dobichacrafttable": "",
       "subtitles.postavilcrafttable": "",
+      "block.hukuta_item_pack.lohotron": "Custom Craft Table",
       "subtitles.zvuki_crafttable": "",
       "subtitles.hodbacrafttable": ""
     }
@@ -106,12 +123,12 @@
   "workspaceSettings": {
     "modid": "hukuta_item_pack",
     "modName": "Hu4uTa Item Pack",
-    "version": "1.0.0",
-    "author": "hu4uta, MCreator",
-    "websiteURL": "https://mcreator.net",
-    "license": "Academic Free License v3.0",
+    "version": "0.0.1",
+    "author": "hu4uta",
+    "license": "WTF",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
+    "modPicture": "minecraft_dikoe_naebalovo",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],

@@ -24,7 +24,7 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
-public class CustomCraftTableGUIMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
+public class LohotronGUIMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
 	public final Player entity;
@@ -33,8 +33,8 @@ public class CustomCraftTableGUIMenu extends AbstractContainerMenu implements Su
 	private final Map<Integer, Slot> customSlots = new HashMap<>();
 	private boolean bound = false;
 
-	public CustomCraftTableGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(HukutaItemPackModMenus.CUSTOM_CRAFT_TABLE_GUI, id);
+	public LohotronGUIMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+		super(HukutaItemPackModMenus.LOHOTRON_GUI, id);
 		this.entity = inv.player;
 		this.world = inv.player.level;
 		this.internal = new ItemStackHandler(2);

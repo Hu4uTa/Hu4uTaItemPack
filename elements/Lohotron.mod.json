@@ -107,7 +107,7 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "CustomCraftTableGUI",
+    "guiBoundTo": "LohotronGUI",
     "openGUIOnRightClick": true,
     "inventorySize": 2,
     "inventoryStackSize": 64,

@@ -1,5 +1,5 @@
 {
-  "parent": "hukuta_item_pack:block/custom_craft_table",
+  "parent": "hukuta_item_pack:block/lohotron",
   "display": {
     "thirdperson": {
       "rotation": [

@@ -13,11 +13,10 @@ import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
 
-public class CustomProcedure {
+public class LohotronProcideProcedure {
 	public static void execute(Entity entity, HashMap guistate) {
 		if (entity == null || guistate == null)
 			return;
-		double rand = 0;
 		if ((entity instanceof ServerPlayer _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt
 				? ((Slot) _slt.get(0)).getItem()
 				: ItemStack.EMPTY).getItem() == Items.DIAMOND) {

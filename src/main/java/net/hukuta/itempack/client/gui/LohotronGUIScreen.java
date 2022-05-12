@@ -12,8 +12,8 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.Minecraft;
 
-import net.hukuta.itempack.world.inventory.CustomCraftTableGUIMenu;
-import net.hukuta.itempack.network.CustomCraftTableGUIButtonMessage;
+import net.hukuta.itempack.world.inventory.LohotronGUIMenu;
+import net.hukuta.itempack.network.LohotronGUIButtonMessage;
 import net.hukuta.itempack.HukutaItemPackMod;
 
 import java.util.HashMap;
@@ -21,14 +21,14 @@ import java.util.HashMap;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
-public class CustomCraftTableGUIScreen extends AbstractContainerScreen<CustomCraftTableGUIMenu> {
-	private final static HashMap<String, Object> guistate = CustomCraftTableGUIMenu.guistate;
+public class LohotronGUIScreen extends AbstractContainerScreen<LohotronGUIMenu> {
+	private final static HashMap<String, Object> guistate = LohotronGUIMenu.guistate;
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
 	EditBox loh;
 
-	public CustomCraftTableGUIScreen(CustomCraftTableGUIMenu container, Inventory inventory, Component text) {
+	public LohotronGUIScreen(LohotronGUIMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -39,7 +39,7 @@ public class CustomCraftTableGUIScreen extends AbstractContainerScreen<CustomCra
 		this.imageHeight = 170;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("hukuta_item_pack:textures/custom_craft_table_gui.png");
+	private static final ResourceLocation texture = new ResourceLocation("hukuta_item_pack:textures/lohotron_gui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {
@@ -95,8 +95,8 @@ public class CustomCraftTableGUIScreen extends AbstractContainerScreen<CustomCra
 		this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
 		this.addRenderableWidget(new Button(this.leftPos + 59, this.topPos + 58, 56, 20, new TextComponent("Выйграть!"), e -> {
 			if (true) {
-				HukutaItemPackMod.PACKET_HANDLER.sendToServer(new CustomCraftTableGUIButtonMessage(0, x, y, z));
-				CustomCraftTableGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
+				HukutaItemPackMod.PACKET_HANDLER.sendToServer(new LohotronGUIButtonMessage(0, x, y, z));
+				LohotronGUIButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
 		loh = new EditBox(this.font, this.leftPos + 27, this.topPos + -26, 120, 20, new TextComponent(""));

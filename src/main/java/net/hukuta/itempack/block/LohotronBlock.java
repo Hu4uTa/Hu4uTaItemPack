@@ -37,20 +37,20 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
-import net.hukuta.itempack.world.inventory.CustomCraftTableGUIMenu;
+import net.hukuta.itempack.world.inventory.LohotronGUIMenu;
 import net.hukuta.itempack.init.HukutaItemPackModBlocks;
-import net.hukuta.itempack.block.entity.CustomCraftTableBlockEntity;
+import net.hukuta.itempack.block.entity.LohotronBlockEntity;
 
 import java.util.List;
 import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
-public class CustomCraftTableBlock extends FallingBlock
+public class LohotronBlock extends FallingBlock
 		implements
 
 			EntityBlock {
-	public CustomCraftTableBlock() {
+	public LohotronBlock() {
 		super(BlockBehaviour.Properties.of(Material.WOOD)
 				.sound(new ForgeSoundType(1.0f, 1.0f, () -> new SoundEvent(new ResourceLocation("hukuta_item_pack:slomalcrafttable")),
 						() -> new SoundEvent(new ResourceLocation("hukuta_item_pack:hodbacrafttable")),
@@ -96,7 +96,7 @@ public class CustomCraftTableBlock extends FallingBlock
 
 				@Override
 				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new CustomCraftTableGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
+					return new LohotronGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(pos));
 				}
 			}, pos);
 		}
@@ -111,7 +111,7 @@ public class CustomCraftTableBlock extends FallingBlock
 
 	@Override
 	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-		return new CustomCraftTableBlockEntity(pos, state);
+		return new LohotronBlockEntity(pos, state);
 	}
 
 	@Override
@@ -125,7 +125,7 @@ public class CustomCraftTableBlock extends FallingBlock
 	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof CustomCraftTableBlockEntity be) {
+			if (blockEntity instanceof LohotronBlockEntity be) {
 				Containers.dropContents(world, pos, be);
 				world.updateNeighbourForOutputSignal(pos, this);
 			}
@@ -141,7 +141,7 @@ public class CustomCraftTableBlock extends FallingBlock
 	@Override
 	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
 		BlockEntity tileentity = world.getBlockEntity(pos);
-		if (tileentity instanceof CustomCraftTableBlockEntity be)
+		if (tileentity instanceof LohotronBlockEntity be)
 			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
 		else
 			return 0;
@@ -149,6 +149,6 @@ public class CustomCraftTableBlock extends FallingBlock
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(HukutaItemPackModBlocks.CUSTOM_CRAFT_TABLE.get(), renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(HukutaItemPackModBlocks.LOHOTRON.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

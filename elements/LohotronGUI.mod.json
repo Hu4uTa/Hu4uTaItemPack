@@ -40,7 +40,7 @@
         "data": {
           "text": "Выйграть!",
           "onClick": {
-            "name": "Custom"
+            "name": "LohotronProcide"
           },
           "width": 56,
           "height": 20,

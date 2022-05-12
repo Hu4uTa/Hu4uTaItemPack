@@ -17,7 +17,7 @@ import net.hukuta.itempack.HukutaItemPackMod;
 
 public class HukutaItemPackModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, HukutaItemPackMod.MODID);
-	public static final RegistryObject<Item> CUSTOM_CRAFT_TABLE = block(HukutaItemPackModBlocks.CUSTOM_CRAFT_TABLE, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Item> LOHOTRON = block(HukutaItemPackModBlocks.LOHOTRON, CreativeModeTab.TAB_DECORATIONS);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

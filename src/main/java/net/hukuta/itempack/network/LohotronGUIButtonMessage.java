@@ -11,39 +11,39 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.hukuta.itempack.world.inventory.CustomCraftTableGUIMenu;
-import net.hukuta.itempack.procedures.CustomProcedure;
+import net.hukuta.itempack.world.inventory.LohotronGUIMenu;
+import net.hukuta.itempack.procedures.LohotronProcideProcedure;
 import net.hukuta.itempack.HukutaItemPackMod;
 
 import java.util.function.Supplier;
 import java.util.HashMap;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class CustomCraftTableGUIButtonMessage {
+public class LohotronGUIButtonMessage {
 	private final int buttonID, x, y, z;
 
-	public CustomCraftTableGUIButtonMessage(FriendlyByteBuf buffer) {
+	public LohotronGUIButtonMessage(FriendlyByteBuf buffer) {
 		this.buttonID = buffer.readInt();
 		this.x = buffer.readInt();
 		this.y = buffer.readInt();
 		this.z = buffer.readInt();
 	}
 
-	public CustomCraftTableGUIButtonMessage(int buttonID, int x, int y, int z) {
+	public LohotronGUIButtonMessage(int buttonID, int x, int y, int z) {
 		this.buttonID = buttonID;
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 
-	public static void buffer(CustomCraftTableGUIButtonMessage message, FriendlyByteBuf buffer) {
+	public static void buffer(LohotronGUIButtonMessage message, FriendlyByteBuf buffer) {
 		buffer.writeInt(message.buttonID);
 		buffer.writeInt(message.x);
 		buffer.writeInt(message.y);
 		buffer.writeInt(message.z);
 	}
 
-	public static void handler(CustomCraftTableGUIButtonMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+	public static void handler(LohotronGUIButtonMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
 		NetworkEvent.Context context = contextSupplier.get();
 		context.enqueueWork(() -> {
 			Player entity = context.getSender();
@@ -58,19 +58,19 @@ public class CustomCraftTableGUIButtonMessage {
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
 		Level world = entity.level;
-		HashMap guistate = CustomCraftTableGUIMenu.guistate;
+		HashMap guistate = LohotronGUIMenu.guistate;
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
 		if (buttonID == 0) {
 
-			CustomProcedure.execute(entity, guistate);
+			LohotronProcideProcedure.execute(entity, guistate);
 		}
 	}
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		HukutaItemPackMod.addNetworkMessage(CustomCraftTableGUIButtonMessage.class, CustomCraftTableGUIButtonMessage::buffer,
-				CustomCraftTableGUIButtonMessage::new, CustomCraftTableGUIButtonMessage::handler);
+		HukutaItemPackMod.addNetworkMessage(LohotronGUIButtonMessage.class, LohotronGUIButtonMessage::buffer, LohotronGUIButtonMessage::new,
+				LohotronGUIButtonMessage::handler);
 	}
 }

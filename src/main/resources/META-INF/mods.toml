@@ -1,14 +1,15 @@
 modLoader="javafml"
 loaderVersion="[40,)"
-license="Academic Free License v3.0"
+license="WTF"
 
 [[mods]]
 modId="hukuta_item_pack"
-version="1.0.0"
+version="0.0.1"
 displayName="Hu4uTa Item Pack"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="hu4uta, MCreator"
+logoFile="logo.png"
+authors="hu4uta"
 
 [[dependencies.hukuta_item_pack]]
     modId="minecraft"
